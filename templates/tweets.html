@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="static/js/bootstrap.bundle.js" ></script>
+    <link rel="stylesheet" href="static/css/bootstrap.css"/>
+
+    <meta charset="UTF-8">
+    <title>MLH Tweets</title>
+  </head>
+  <body>
+  {% autoescape None %}
+    <div class="container">
+        <div class="py-5 text-center">
+          <img class="d-block mx-auto mb-4" src="https://mlh.io/assets/logos/mlh-facebook-25d486805087489b3649b9bbcac66957.jpg" alt="" width="72" height="72">
+          <h2>MLH Localhost</h2>
+          <p class="lead">Recent Tweets</p>
+        </div>
+       {% for tweet in tweets %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ escape(tweet.user.screen_name) }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ str(tweet.created_at) }}</h6>
+            <p class="card-text">{{ escape(tweet.text) }}</p>
+            <a href="https://twitter.com/{{escape(tweet.user.screen_name)}}/status/{{tweet.id}}" class="card-link">See Tweet</a>
+            <a href="https://twitter.com/{{escape(tweet.user.screen_name)}}" class="card-link">See User</a>
+          </div>
+        </div>
+      {% end %}
+    </div>
+  </body>
+</html>
+
