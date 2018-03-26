@@ -12,7 +12,7 @@ The running application can be viewed at: http://mlh.mercenarytech.com
 
 ## Install
 
-In the source code directory, from the command line execute ```pip install -r requirements.txt```
+In the source code directory, from the command line execute ```pip3 install -r requirements.txt```
     
 Primary requirements are:
 
